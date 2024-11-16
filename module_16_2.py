@@ -24,5 +24,5 @@ async def id_user(user_id: Annotated[int, Path(ge=1, le=100, description='Enter 
 @app.get('/user/{username}/{age}')
 async def user_info(username: Annotated[
     str, Path(min_length=5, max_length=20, description='Enter username', example='MaminAmetist')],
-                    age: Annotated[int, Path(ge=18, le=120, description='Enter User ID', example='40')]) -> dict:
+                    age: Annotated[int, Path(ge=18, le=120, description='Enter age', example='40')]) -> dict:
     return {'message': f'Информация о пользователе. Имя: {username}. Возраст: {age}'}
